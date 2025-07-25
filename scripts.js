@@ -54,7 +54,7 @@ while (
     "Enter task 3 status (todo, doing, done):"
   ).toLowerCase();
 }
-
+// Create an array to hold the tasks
 const initialTasks = [
   {
     id: 1,
@@ -75,6 +75,25 @@ const initialTasks = [
       "Gain practical experience and collaborate with others in the software development community",
     status: "done",
   },
+  {
+    id: 4,
+    title: task1Title,
+    description: task1Description,
+    status: task1Status,
+  },
+  {
+    id: 5,
+    title: task2Title,
+    description: task2Description,
+    status: task2Status,
+  },
+  { id: 6,
+    title: task3Title,
+    description: task3Description,
+    status: task3Status,
+  },
+
+
 ];
 
 // Check if task1 is done, and log it if so
@@ -95,5 +114,9 @@ if (task3Status === "done") {
 // If neither task1 nor task2 nor task3 is done, show a motivational message
 if (task1Status !== "done" && task2Status !== "done") {
   console.log("No tasks completed, let's get to work!");
+}
+//alert to tell users that they've reached limit of tasks
+if (initialTasks.length >= 6) {
+  alert("There are enough tasks on your board, please check them in the console.");
 }
 
