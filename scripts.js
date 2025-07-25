@@ -36,6 +36,25 @@ while (
     "Enter task 2 status (todo, doing, done):"
   ).toLowerCase();
 }
+
+//Repeat the same steps for task 3
+const task3Title = prompt("Enter task 3 title:");
+const task3Description = prompt("Enter task 3 description:");
+let task3Status = prompt(
+  "Enter task 3 status (todo, doing, done):"
+).toLowerCase();
+
+while (
+  task3Status !== "todo" &&
+  task3Status !== "doing" &&
+  task3Status !== "done"
+) {
+  alert("Invalid status. Please enter 'todo', 'doing', or 'done'.");
+  task2Status = prompt(
+    "Enter task 3 status (todo, doing, done):"
+  ).toLowerCase();
+}
+
 const initialTasks = [
   {
     id: 1,
@@ -68,7 +87,13 @@ if (task2Status === "done") {
   console.log("Title: " + task2Title + ", status: " + task2Status);
 }
 
-// If neither task1 nor task2 is done, show a motivational message
+// Check if task3 is done, and log it if so
+if (task3Status === "done") {
+  console.log("Title: " + task3Title + ", status: " + task3Status);
+}
+
+// If neither task1 nor task2 nor task3 is done, show a motivational message
 if (task1Status !== "done" && task2Status !== "done") {
   console.log("No tasks completed, let's get to work!");
 }
+
