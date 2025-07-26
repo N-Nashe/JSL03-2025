@@ -116,7 +116,7 @@ if (task1Status !== "done" && task2Status !== "done") {
   console.log("No tasks completed, let's get to work!");
 }
 //alert to tell users that they've reached limit of tasks
-if (initialTasks.length >= 6) {
+if (initialTasks.length >= 3) {
   alert("There are enough tasks on your board, please check them in the console.");
 }
 
