@@ -3,9 +3,7 @@ const task1Title = prompt("Enter task 1 title:");
 const task1Description = prompt("Enter task 1 description:");
 
 // Ask for the status of task 1 and convert it to lowercase
-let task1Status = prompt(
-  "Enter task 1 status (todo, doing, done):"
-).toLowerCase();
+let task1Status = prompt("Enter task 1 status (todo, doing, done):").toLowerCase();
 
 // Keep asking until the user enters a valid status for task 1
 while (
@@ -14,17 +12,13 @@ while (
   task1Status !== "done"
 ) {
   alert("Invalid status. Please enter 'todo', 'doing', or 'done'.");
-  task1Status = prompt(
-    "Enter task 1 status (todo, doing, done):"
-  ).toLowerCase();
+  task1Status = prompt("Enter task 1 status (todo, doing, done):").toLowerCase();
 }
 
 // Repeat the same steps for task 2
 const task2Title = prompt("Enter task 2 title:");
 const task2Description = prompt("Enter task 2 description:");
-let task2Status = prompt(
-  "Enter task 2 status (todo, doing, done):"
-).toLowerCase();
+let task2Status = prompt("Enter task 2 status (todo, doing, done):").toLowerCase();
 
 while (
   task2Status !== "todo" &&
@@ -32,17 +26,13 @@ while (
   task2Status !== "done"
 ) {
   alert("Invalid status. Please enter 'todo', 'doing', or 'done'.");
-  task2Status = prompt(
-    "Enter task 2 status (todo, doing, done):"
-  ).toLowerCase();
+  task2Status = prompt("Enter task 2 status (todo, doing, done):").toLowerCase();
 }
 
-//Repeat the same steps for task 3
+// Repeat the same steps for task 3
 const task3Title = prompt("Enter task 3 title:");
 const task3Description = prompt("Enter task 3 description:");
-let task3Status = prompt(
-  "Enter task 3 status (todo, doing, done):"
-).toLowerCase();
+let task3Status = prompt("Enter task 3 status (todo, doing, done):").toLowerCase();
 
 while (
   task3Status !== "todo" &&
@@ -50,10 +40,9 @@ while (
   task3Status !== "done"
 ) {
   alert("Invalid status. Please enter 'todo', 'doing', or 'done'.");
-  task2Status = prompt(
-    "Enter task 3 status (todo, doing, done):"
-  ).toLowerCase();
+  task3Status = prompt("Enter task 3 status (todo, doing, done):").toLowerCase();
 }
+
 // Create an array to hold the tasks
 const initialTasks = [
   {
@@ -71,8 +60,7 @@ const initialTasks = [
   {
     id: 3,
     title: "Contribute to Open Source Projects",
-    description:
-      "Gain practical experience and collaborate with others in the software development community",
+    description: "Gain practical experience and collaborate with others in the software development community",
     status: "done",
   },
   {
@@ -87,13 +75,12 @@ const initialTasks = [
     description: task2Description,
     status: task2Status,
   },
-  { id: 6,
+  {
+    id: 6,
     title: task3Title,
     description: task3Description,
     status: task3Status,
   },
-
-
 ];
 
 // Find the highest current id in the initialTasks array
@@ -102,30 +89,26 @@ const getNextTaskId = () => {
   return Math.max(...initialTasks.map(task => task.id)) + 1;
 };
 
-
-
 // Check if task1 is done, and log it if so
 if (task1Status === "done") {
   console.log("Title: " + task1Title + ", status: " + task1Status);
 }
 
-//Log all tasks  title and status as objects in the array 
-
+// Log all tasks title and status as objects in the array
 const taskSummaries = initialTasks.map(task => ({
   title: task.title,
   description: task.description,
-  status: task.status
-
+  status: task.status,
 }));
 
 console.log("All tasks (title and status):", taskSummaries);
-
 
 // If neither task1 nor task2 nor task3 is done, show a motivational message
 if (task1Status !== "done" && task2Status !== "done") {
   console.log("No tasks completed, let's get to work!");
 }
-//alert to tell users that they've reached limit of tasks
+
+// Alert to tell users that they've reached limit of tasks
 if (initialTasks.length >= 3) {
   alert("There are enough tasks on your board, please check them in the console.");
 }
