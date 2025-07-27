@@ -96,6 +96,8 @@ const taskSummaries = initialTasks.map(task => ({
   status: task.status,
 }));
 
+// Log the task summaries to the console
+
 console.log("All tasks:", taskSummaries);
 
 // If neither task1 nor task2 nor task3 is done, show a motivational message
