@@ -96,20 +96,30 @@ const initialTasks = [
 
 ];
 
+// Find the highest current id in the initialTasks array
+const getNextTaskId = () => {
+  if (initialTasks.length === 0) return 1;
+  return Math.max(...initialTasks.map(task => task.id)) + 1;
+};
+
+
+
 // Check if task1 is done, and log it if so
 if (task1Status === "done") {
   console.log("Title: " + task1Title + ", status: " + task1Status);
 }
 
-// Check if task2 is done, and log it if so
-if (task2Status === "done") {
-  console.log("Title: " + task2Title + ", status: " + task2Status);
-}
+//Log all tasks  title and status as objects in the array 
 
-// Check if task3 is done, and log it if so
-if (task3Status === "done") {
-  console.log("Title: " + task3Title + ", status: " + task3Status);
-}
+const taskSummaries = initialTasks.map(task => ({
+  title: task.title,
+  description: task.description,
+  status: task.status
+
+}));
+
+console.log("All tasks (title and status):", taskSummaries);
+
 
 // If neither task1 nor task2 nor task3 is done, show a motivational message
 if (task1Status !== "done" && task2Status !== "done") {
