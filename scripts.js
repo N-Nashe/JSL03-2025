@@ -89,11 +89,6 @@ const getNextTaskId = () => {
   return Math.max(...initialTasks.map(task => task.id)) + 1;
 };
 
-// Check if task1 is done, and log it if so
-if (task1Status === "done") {
-  console.log("Title: " + task1Title + ", status: " + task1Status);
-}
-
 // Log all tasks title and status as objects in the array
 const taskSummaries = initialTasks.map(task => ({
   title: task.title,
@@ -101,7 +96,7 @@ const taskSummaries = initialTasks.map(task => ({
   status: task.status,
 }));
 
-console.log("All tasks (title and status):", taskSummaries);
+console.log("All tasks:", taskSummaries);
 
 // If neither task1 nor task2 nor task3 is done, show a motivational message
 if (task1Status !== "done" && task2Status !== "done") {
