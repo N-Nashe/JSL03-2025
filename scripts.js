@@ -96,9 +96,13 @@ const taskSummaries = initialTasks.map(task => ({
   status: task.status,
 }));
 
-// Log the task summaries to the console
-
 console.log("All tasks:", taskSummaries);
+
+// Array to hold tasks that are done
+const doneTasks = initialTasks.filter(task => task.status === "done");
+
+// Log the tasks that are done below the initial tasks
+console.log("Tasks that are done:", doneTasks);
 
 // If neither task1 nor task2 nor task3 is done, show a motivational message
 if (task1Status !== "done" && task2Status !== "done") {
